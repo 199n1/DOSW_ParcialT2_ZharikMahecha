@@ -55,6 +55,15 @@ al solucionar errores van a afectar a otras partes del sistema, que no deberian 
 un clean coding.
 
 ---
+
+### Punto 7 - diferencias entre un validador, una utilidad y un servicio
+
+- Validador: Se hacen loas verificaciones del cumplimiento de las reglas de negocio
+- Utilidad : Se especifican las operaciones que son comunes para simplificar el codigo
+- Servicio: Se manejan las reglas complejas y la logica del negocio
+
+---
+
 ### Diseño de Interfaces — Figma
 
 ---
