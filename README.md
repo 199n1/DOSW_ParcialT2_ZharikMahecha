@@ -29,6 +29,9 @@
 
 # Parte Teorica
 
+### Punto 1 -Funcionalidades
+[Funcionalidades_punto1.docx](docs%2Frequeriments%2FFuncionalidades_punto1.docx)
+
 ### Punto 2 - Diferencia entre diferencia entre Validaciones de input y Validaciones de negocio
 
 - Validaciones de input: Verifica que los datos tenga el formato correcto
