@@ -70,6 +70,19 @@ Ya que son usadas para evaluar un producto, garantizan las reglas de negocio y e
 sistema porque permiten identificar defectos en la arquitectura, funcionalidades no validas y vulnerabilidades 
 
 ---
+
+
+### Punto 13 - Etapas principales de un pipeline y en qué consiste cada una
+
+- Las etapas principales de un pipeline son:
+  - Build: Instala las dependenciasm complila el codigo y lo empaqueta
+  - Test: Automatiza las pruebas para avlidar cads commit
+  - Analisis: Hace un analisi estatico y de seguridad
+  - Deploy: Hace el despliegue a los entornos que se establezcan y usa contenedores 
+  - Monitoring: Monitorea y alerta automaticamente si algo falla
+
+---
+
 ### Diseño de Interfaces — Figma
 
 ---
