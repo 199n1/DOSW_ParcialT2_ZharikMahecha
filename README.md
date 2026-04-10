@@ -27,13 +27,20 @@
 ---
 
 
-##  Herramientas de modelado y diseño
+# Parte Teorica
 
-### Modelado UML — Draw.io
->  *(Agregar una captura de pantalla de  cuenta de Draw.io)*
+### Punto 3 - Dieferencia entre autenticación, autorización e integridad
+
+-Autentificacion: es la forma en que el sistema valida la identificacion del usuario que intenta acceder
+
+-Autorizacion:  Es la definicion de que puede hacer el usuario dentro del sistemas, los permisos que se le otorgan
+
+-Integridad: Es la garantizacion de que la informacion no sera modificada ni alterada durante el proceso de almacenamiento
+
+---
+### 
 
 ### Diseño de Interfaces — Figma
->  *(Agregar captura de pantalla de cuenta de Figma)*
 
 ---
 
