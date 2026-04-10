@@ -29,7 +29,15 @@
 
 # Parte Teorica
 
-### Punto 3 - Dieferencia entre autenticación, autorización e integridad
+### Punto 2 - Diferencia entre diferencia entre Validaciones de input y Validaciones de negocio
+
+- Validaciones de input: Verifica que los datos tenga el formato correcto
+
+
+- Validaciones de negocio: Verifica que tengan sentido segun las reglas del sistema
+
+
+### Punto 3 - Diferencia entre autenticación, autorización e integridad
 
 -Autentificacion: es la forma en que el sistema valida la identificacion del usuario que intenta acceder
 
@@ -64,6 +72,8 @@ un clean coding.
 
 ---
 
+### Punto 11 -
+
 ### Punto 12 - Explique cómo las pruebas garantizan el cumplimiento de las reglas de negocio y la integridad del sistema.
 
 Ya que son usadas para evaluar un producto, garantizan las reglas de negocio y el cumplimiento de la integridad del 
@@ -82,7 +92,28 @@ sistema porque permiten identificar defectos en la arquitectura, funcionalidades
   - Monitoring: Monitorea y alerta automaticamente si algo falla
 
 ---
+### Punto 14 - ¿Qué sucede si una prueba falla en el pipeline? ¿Debe permitirse el despliegue? Justifique
+- No se debe permitir el despliegue, ya que la intencion es que no se permita llevar errores a otra etapa de produccion
 
+
+### Punto 15 - Explique el concepto de logging en el manejo de errores:
+
+- Es el registro de los eventos que ocurren en la aplicacion como  los errores, las advertencias, es decir el manejo de
+la observabilidad
+
+a. ¿Qué información debería registrarse?
+  - Mensaje de error claro
+  - Niveles de error
+  - id de usuario
+  - Endpoint o modulo donde ocurre el evento
+
+b. ¿Qué NO debería registrarse (por seguridad)?
+
+  - Datos personales sensibles
+  - Contraseñas 
+  - Tokens
+
+---
 ### Diseño de Interfaces — Figma
 
 ---
