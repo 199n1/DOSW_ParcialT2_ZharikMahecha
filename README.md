@@ -51,7 +51,7 @@
 ---
 ### Punto 4 - Diagrama de componentes general ECIEXPRESS 
 
-![img.png](docs/images/ComponentesGeneral.png)
+![img.png](docs/uml/ComponentesGeneral.png)
 
 El usuario usa la plataforma mediante la interfaz, usando el qr, luego esta hace las peticiones a todo el sistema interno,
 el cual va almacenando la informacion dentro de la BD, este mismo devuelve la interaccion al fronted y retornara la 
@@ -66,6 +66,9 @@ al solucionar errores van a afectar a otras partes del sistema, que no deberian 
 un clean coding.
 
 ---
+
+## punto 6
+![img.png](docs/uml/img.png)
 
 ### Punto 7 - diferencias entre un validador, una utilidad y un servicio
 
