@@ -46,6 +46,15 @@ El usuario usa la plataforma mediante la interfaz, usando el qr, luego esta hace
 el cual va almacenando la informacion dentro de la BD, este mismo devuelve la interaccion al fronted y retornara la 
 informacion que usuario haya pedido
 
+---
+
+### Punto 5 - Problemas al no separar capas correctamente
+
+- Sino se separa las capas se va a producir un mayor nivel de acoplamiento, se va a complicar la parte de las pruebas y 
+al solucionar errores van a afectar a otras partes del sistema, que no deberian afectarse, es decir que no se implementa
+un clean coding.
+
+---
 ### Diseño de Interfaces — Figma
 
 ---
