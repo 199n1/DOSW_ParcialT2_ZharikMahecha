@@ -2,17 +2,17 @@
 
 
 
-| Campo         | Detalle             |
-|---------------|---------------------|
-| **Nombre**    | Zharik Mahecha      |
-| **Grupo**     | Grupo 1             |
+| Campo     | Detalle                        |
+|-----------|--------------------------------|
+| **Nombre** | Zharik Mahecha y Mariana Parra |
+| **Grupo** | Grupo 1                        |
 
 
 ---
 
 ##  Tecnologías del proyecto
 
-- Java 17
+- Java 21
 - Spring Boot 3.2.4
 - PostgreSQL + JPA
 - MongoDB
@@ -38,7 +38,7 @@
 -Integridad: Es la garantizacion de que la informacion no sera modificada ni alterada durante el proceso de almacenamiento
 
 ---
-### Punto4 - Diagrama de componentes general ECIEXPRESS 
+### Punto 4 - Diagrama de componentes general ECIEXPRESS 
 
 ![img.png](docs/images/ComponentesGeneral.png)
 
@@ -64,6 +64,12 @@ un clean coding.
 
 ---
 
+### Punto 12 - Explique cómo las pruebas garantizan el cumplimiento de las reglas de negocio y la integridad del sistema.
+
+Ya que son usadas para evaluar un producto, garantizan las reglas de negocio y el cumplimiento de la integridad del 
+sistema porque permiten identificar defectos en la arquitectura, funcionalidades no validas y vulnerabilidades 
+
+---
 ### Diseño de Interfaces — Figma
 
 ---
