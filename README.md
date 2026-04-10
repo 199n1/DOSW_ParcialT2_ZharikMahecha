@@ -38,43 +38,20 @@
 -Integridad: Es la garantizacion de que la informacion no sera modificada ni alterada durante el proceso de almacenamiento
 
 ---
-### 
+### Punto4 - Diagrama de componentes general ECIEXPRESS 
+
+![img.png](docs/images/ComponentesGeneral.png)
+
+El usuario usa la plataforma mediante la interfaz, usando el qr, luego esta hace las peticiones a todo el sistema interno,
+el cual va almacenando la informacion dentro de la BD, este mismo devuelve la interaccion al fronted y retornara la 
+informacion que usuario haya pedido
 
 ### Diseño de Interfaces — Figma
 
 ---
 
-## ⚙️ Configuración de base de datos
-
-Configura tus credenciales en `src/main/resources/application.yaml`:
-
-```yaml
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/dosw_parcial
-    username: postgres
-    password: your_password
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/dosw_parcial
-```
-
----
-
-## Cómo ejecutar
-
-```bash
-# Clonar el repositorio
-git clone https://github.com/TU_USUARIO/DOSW_ParcialT2_ZharikMahecha.git
-
-# Entrar al proyecto
-cd DOSW_ParcialT2_ZharikMahecha
-
-# Compilar
-mvn clean install
-
-# Ejecutar
-mvn spring-boot:run
+## 
+## 
 ```
 
 Swagger UI disponible en: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
