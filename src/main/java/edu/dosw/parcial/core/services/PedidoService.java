@@ -9,6 +9,7 @@ import edu.dosw.parcial.persistence.repositories.PedidoRepository;
 import edu.dosw.parcial.persistence.repositories.ProductoRepository;
 import edu.dosw.parcial.persistence.repositories.UsuarioRepository;
 import edu.dosw.parcial.core.validators.PedidoValidator;
+import edu.dosw.parcial.state.OrderStateFactory;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -65,7 +66,6 @@ public class PedidoService {
             items.add(item);
             total += producto.getPrecio() * itemReq.getCantidad();
 
-            // Actualizar stock
             producto.setStock(producto.getStock() - itemReq.getCantidad());
             productoRepository.save(producto);
         }
@@ -87,7 +87,6 @@ public class PedidoService {
                 .orElseThrow(() -> new EntityNotFoundException(
                         "Pedido no encontrado: " + pedidoId));
 
-        // El patrón State valida la transición
         switch (nuevoEstado) {
             case EN_PREPARACION -> orderStateFactory
                     .getState(pedido.getEstado())
@@ -111,16 +110,13 @@ public class PedidoService {
                 .orElseThrow(() -> new EntityNotFoundException(
                         "Pedido no encontrado: " + pedidoId));
 
-        // Validar que el pedido pertenece al cliente
         if (!pedido.getUsuario().getCorreo().equals(correoCliente)) {
             throw new IllegalArgumentException(
                     "No tienes permiso para cancelar este pedido");
         }
 
-        // El patrón State valida que esté en CREADO
         orderStateFactory.getState(pedido.getEstado()).cancelar(pedido);
 
-        // Restaurar stock
         for (ItemPedido item : pedido.getItems()) {
             Producto producto = item.getProducto();
             producto.setStock(producto.getStock() + item.getCantidad());
