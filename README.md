@@ -30,7 +30,8 @@
 # Parte Teorica
 
 ### Punto 1 -Funcionalidades
-[Funcionalidades_punto1.docx](docs%2Frequeriments%2FFuncionalidades_punto1.docx)
+[Funcionalidades_punto1_.docx](docs/requeriments/Funcionalidades_punto1_.docx)
+
 
 ### Punto 2 - Diferencia entre diferencia entre Validaciones de input y Validaciones de negocio
 
