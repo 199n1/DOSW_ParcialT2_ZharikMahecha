@@ -5,6 +5,7 @@ import edu.dosw.parcial.controller.dtos.request.ItemPedidoRequest;
 import edu.dosw.parcial.controller.dtos.response.PedidoResponse;
 import edu.dosw.parcial.controller.mappers.PedidoMapper;
 import edu.dosw.parcial.core.models.*;
+import edu.dosw.parcial.core.models.enums.EstadoPedido;
 import edu.dosw.parcial.persistence.repositories.PedidoRepository;
 import edu.dosw.parcial.persistence.repositories.ProductoRepository;
 import edu.dosw.parcial.persistence.repositories.UsuarioRepository;

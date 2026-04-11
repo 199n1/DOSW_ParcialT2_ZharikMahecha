@@ -9,10 +9,13 @@ import java.util.List;
 
 @Entity
 @Table(name = "pedidos")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@EqualsAndHashCode(exclude = "items")
+@ToString(exclude = "items")
 public class Pedido {
 
     @Id

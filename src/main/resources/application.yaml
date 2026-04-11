@@ -21,15 +21,11 @@ spring:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
-  # ===== MongoDB =====
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/dosw_parcial
 
 # ===== JWT =====
 jwt:
-  secret: dosw-parcial-secret-key-must-be-at-least-256-bits-long-for-hs256
-  expiration: 86400000   # 24 horas en ms
+  secret:  ZG9zdy1wYXJjaWFsLXNlY3JldC1rZXktbXVzdC1iZS1hdC1sZWFzdC0yNTYtYml0cy1sb25nLWZvci1oczI1Ng==
+  expiration: 86400000
 
 # ===== SpringDoc / Swagger =====
 springdoc:

@@ -5,10 +5,13 @@ import lombok.*;
 
 @Entity
 @Table(name = "items_pedido")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@EqualsAndHashCode(exclude = "pedido")
+@ToString(exclude = "pedido")
 public class ItemPedido {
 
     @Id

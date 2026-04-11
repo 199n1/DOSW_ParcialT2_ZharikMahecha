@@ -1,5 +1,6 @@
 package edu.dosw.parcial.controller;
 
+import edu.dosw.parcial.controller.dtos.request.LoginRequestDTO;
 import edu.dosw.parcial.controller.dtos.request.RegisterRequest;
 import edu.dosw.parcial.controller.dtos.response.AuthResponse;
 import edu.dosw.parcial.core.services.AuthService;
@@ -28,5 +29,13 @@ public class AuthController {
         log.info("POST /api/auth/register - correo: {}", request.getCorreo());
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(authService.register(request));
+    }
+
+    @PostMapping("/login")
+    @Operation(summary = "Iniciar sesión")
+    public ResponseEntity<AuthResponse> login(
+            @Valid @RequestBody LoginRequestDTO request) {
+        log.info("POST /api/auth/login - correo: {}", request.getCorreo());
+        return ResponseEntity.ok(authService.login(request));
     }
 }

@@ -1,10 +1,12 @@
 package edu.dosw.parcial.core.services;
 
+import edu.dosw.parcial.controller.dtos.request.LoginRequestDTO;
 import edu.dosw.parcial.controller.dtos.request.RegisterRequest;
 import edu.dosw.parcial.controller.dtos.response.AuthResponse;
 import edu.dosw.parcial.core.models.Usuario;
 import edu.dosw.parcial.core.models.enums.Rol;
 import edu.dosw.parcial.persistence.repositories.UsuarioRepository;
+import edu.dosw.parcial.security.JwtService;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -45,5 +47,21 @@ public class AuthService {
 
         log.info("Usuario registrado exitosamente: {}", usuario.getCorreo());
         return new AuthResponse(token, usuario.getRol().name(), "Registro exitoso");
+    }
+
+    public AuthResponse login(LoginRequestDTO request) {
+        log.info("Autenticando usuario: {}", request.getCorreo());
+
+        Usuario usuario = usuarioRepository.findByCorreo(request.getCorreo())
+                .orElseThrow(() -> new IllegalArgumentException("Credenciales inválidas"));
+
+        if (!passwordEncoder.matches(request.getContrasena(), usuario.getContrasena())) {
+            log.warn("Contraseña incorrecta para: {}", request.getCorreo());
+            throw new IllegalArgumentException("Credenciales inválidas");
+        }
+
+        String token = jwtService.generateToken(usuario.getCorreo(), usuario.getRol().name());
+        log.info("Login exitoso para: {}", usuario.getCorreo());
+        return new AuthResponse(token, usuario.getRol().name(), "Login exitoso");
     }
 }
