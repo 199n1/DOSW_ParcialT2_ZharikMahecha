@@ -32,6 +32,8 @@
 ### Punto 1 -Funcionalidades
 [Funcionalidades_punto1.docx](docs%2Frequeriments%2FFuncionalidades_punto1.docx)
 
+---
+
 ### Punto 2 - Diferencia entre diferencia entre Validaciones de input y Validaciones de negocio
 
 - Validaciones de input: Verifica que los datos tenga el formato correcto
@@ -39,6 +41,7 @@
 
 - Validaciones de negocio: Verifica que tengan sentido segun las reglas del sistema
 
+---
 
 ### Punto 3 - Diferencia entre autenticación, autorización e integridad
 
@@ -70,6 +73,8 @@ un clean coding.
 ### punto 6 - Diagrama de Componentes especifico
 ![img.png](docs/uml/img.png)
 
+---
+
 ### Punto 7 - diferencias entre un validador, una utilidad y un servicio
 
 - Validador: Se hacen loas verificaciones del cumplimiento de las reglas de negocio
@@ -85,10 +90,59 @@ un clean coding.
    software usaría para manejar los estados del pedido y por qué? 
 - Se usa el patrón State porque el comportamiento del Pedido cambia según su estado(tiene 4 estados y cada uno tiene distintas reglas). En lugar de llenar el codigo de condicionales, cada estado encapsula su propia logica, asi tenemos el codigo limpio
 
+---
+
 ### Punto 9 - Diagrama entidad-relacion
 ![diagrama_entidad_relacion.png](docs/uml/diagrama_entidad_relacion.png)
 
-### Punto 11 -
+---
+
+### Punto 10 - Proponga 2 índices que mejoren el rendimiento de las consultas
+
+- Indice para el estado del pedido del usuario 
+
+  Ya que un usuario solo puede tener un pedido activo, esto disminuye la busqueda. 
+
+- Indice para el qr del producto
+
+  Ya que el flujo principal de la apps es escanear un Qr, garantiza una busqueda casi instantanea
+
+---
+
+### Punto 11 - TDD
+
+- RED- Pruebas que fallan primero
+
+  Arrange: Deberia crearse el pedido exitosamente
+  Act: Crea el pedido
+  Assert: el id no debe ser nulo, el estado del pedido debe ser creado
+
+- GREEN - Implementar lo minimo para que pasen
+  
+  Validar que el pedido este actvo, ver el stock y disponibilidad, se crea el pedido y se calcula el total
+
+- BLUE - Refactorizar
+
+  Se ponen las validaciones, se extrae el calculo total a un metodo privado
+
+- Casos de prueba iniciales
+
+|Escenario |Tipo |Resultado esperado |
+|----------|-----|--------------------|
+|Pedido creado correctamente |Happy Path |201 Created + PedidoResponse|
+|Usuario ya tiene pedido activo |Error negocio |409 Conflict|
+|Producto sin stock |Error negocio |400 Bad Request|
+|Producto no disponible |Error negocio400 Bad Request|
+|Lista de productos vacía |Error input400 Bad Request |
+|usuarioId nulo |Error input400 Bad Request|
+|Cantidad <= 0 |Error input400 Bad Request|
+
+- Validaciones clave cubiertas
+
+  Input: usuarioId no nulo, lista de items no vacía, cantidades > 0, productoId válido.
+  Negocio: usuario sin pedido activo, producto en estado DISPONIBLE, stock suficiente para la cantidad solicitada.
+
+--- 
 
 ### Punto 12 - Explique cómo las pruebas garantizan el cumplimiento de las reglas de negocio y la integridad del sistema.
 
@@ -96,7 +150,6 @@ Ya que son usadas para evaluar un producto, garantizan las reglas de negocio y e
 sistema porque permiten identificar defectos en la arquitectura, funcionalidades no validas y vulnerabilidades 
 
 ---
-
 
 ### Punto 13 - Etapas principales de un pipeline y en qué consiste cada una
 
@@ -108,9 +161,11 @@ sistema porque permiten identificar defectos en la arquitectura, funcionalidades
   - Monitoring: Monitorea y alerta automaticamente si algo falla
 
 ---
+
 ### Punto 14 - ¿Qué sucede si una prueba falla en el pipeline? ¿Debe permitirse el despliegue? Justifique
 - No se debe permitir el despliegue, ya que la intencion es que no se permita llevar errores a otra etapa de produccion
 
+---
 
 ### Punto 15 - Explique el concepto de logging en el manejo de errores:
 
@@ -133,9 +188,5 @@ b. ¿Qué NO debería registrarse (por seguridad)?
 ### Diseño de Interfaces — Figma
 
 ---
-
-## 
-## 
-```
 
 Swagger UI disponible en: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
