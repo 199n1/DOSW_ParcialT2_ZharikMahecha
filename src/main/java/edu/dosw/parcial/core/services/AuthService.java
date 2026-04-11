@@ -1,7 +1,13 @@
 package edu.dosw.parcial.core.services;
 
+import edu.dosw.parcial.controller.dtos.request.RegisterRequest;
+import edu.dosw.parcial.controller.dtos.response.AuthResponse;
+import edu.dosw.parcial.core.models.Usuario;
+import edu.dosw.parcial.core.models.enums.Rol;
+import edu.dosw.parcial.persistence.repositories.UsuarioRepository;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,13 +22,13 @@ public class AuthService {
     public AuthResponse register(RegisterRequest request) {
         log.info("Registrando usuario con correo: {}", request.getCorreo());
 
-        // Validación negocio: correo ya registrado
+
         if (usuarioRepository.existsByCorreo(request.getCorreo())) {
             log.warn("Intento de registro con correo ya existente: {}", request.getCorreo());
             throw new IllegalArgumentException("El correo ya está registrado");
         }
 
-        // Validación negocio: correo institucional
+
         if (!request.getCorreo().endsWith(".edu.co") && !request.getCorreo().endsWith(".edu")) {
             throw new IllegalArgumentException("Debe usar un correo institucional");
         }

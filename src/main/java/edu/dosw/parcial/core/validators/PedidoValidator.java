@@ -1,8 +1,20 @@
 package edu.dosw.parcial.core.validators;
 
+import edu.dosw.parcial.controller.dtos.request.ItemPedidoRequest;
+import edu.dosw.parcial.core.exceptions.PedidoActivoException;
+import edu.dosw.parcial.core.exceptions.StockInsuficienteException;
+import edu.dosw.parcial.core.models.Producto;
+import edu.dosw.parcial.core.models.Usuario;
+import edu.dosw.parcial.core.models.enums.EstadoPedido;
+import edu.dosw.parcial.core.models.enums.EstadoProducto;
+import edu.dosw.parcial.persistence.repositories.PedidoRepository;
+import edu.dosw.parcial.persistence.repositories.ProductoRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 @RequiredArgsConstructor
