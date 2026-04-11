@@ -85,7 +85,8 @@ un clean coding.
    software usaría para manejar los estados del pedido y por qué? 
 - Se usa el patrón State porque el comportamiento del Pedido cambia según su estado(tiene 4 estados y cada uno tiene distintas reglas). En lugar de llenar el codigo de condicionales, cada estado encapsula su propia logica, asi tenemos el codigo limpio
 
-
+### Punto 9 - Diagrama entidad-relacion
+![diagrama_entidad_relacion.png](docs/uml/diagrama_entidad_relacion.png)
 
 ### Punto 11 -
 
