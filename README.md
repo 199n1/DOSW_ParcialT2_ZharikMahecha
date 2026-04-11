@@ -187,6 +187,9 @@ b. ¿Qué NO debería registrarse (por seguridad)?
 ---
 ### Diseño de Interfaces — Figma
 
+https://www.figma.com/design/jzcer5mYYBuLzvwGER20ig/Untitled?node-id=0-1&p=f&t=MGDwHMuK1i5P7fLf-0
 ---
 
+### Cobertura jacoco
+![img.png](docs/images/img.png)
 Swagger UI disponible en: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
