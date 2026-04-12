@@ -7,9 +7,9 @@ spring:
 
   # ===== PostgreSQL (JPA) =====
   datasource:
-    url: jdbc:postgresql://localhost:5432/dosw_parcial
+    url: jdbc:postgresql://localhost:5432/ParcialT2
     username: postgres
-    password: ciclos234
+    password: Ciclos12345.
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -30,7 +30,7 @@ jwt:
 # ===== SpringDoc / Swagger =====
 springdoc:
   api-docs:
-    path: /api-docs
+    path: /v3/api-docs
   swagger-ui:
     path: /swagger-ui.html
     enabled: true
